@@ -23,6 +23,12 @@ rm -rf .git
   sed 's/=.*/=/' .env > .env.example
   ```
 
+#### Install Dependencies
+
+```shell
+npm install
+```
+
 #### Run
 
 ```shell

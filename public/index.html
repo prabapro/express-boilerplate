@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<title>Node.js HTML Example</title>
+	</head>
+	<body>
+		<h1>Page 1.</h1>
+
+		<button onclick="sendEmail()">Send Email</button>
+
+		<script>
+			async function sendEmail() {
+				const to = "nodemailer@codechilli.testinator.com"; // Change this to the recipient's email address
+				const subject = "Hello from Node.js";
+				const text = "This is a test email from Node.js!";
+
+				try {
+					const response = await fetch("/send-email", {
+						method: "POST",
+						headers: {
+							"Content-Type": "application/json",
+						},
+						body: JSON.stringify({ to, subject, text }),
+					});
+
+					const result = await response.json();
+					console.log(result.message);
+				} catch (error) {
+					console.error("Error sending email:", error);
+					console.log("Failed to send email. Check the console for details.");
+				}
+			}
+		</script>
+	</body>
+</html>
