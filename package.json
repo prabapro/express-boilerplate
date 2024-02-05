@@ -1,0 +1,27 @@
+{
+	"name": "express-boilerplate",
+	"version": "1.0.0",
+	"description": "Express Boilerplate with Node Mailer",
+	"main": "src/app.js",
+	"scripts": {
+		"start": "npm run dev",
+		"dev": "concurrently \"npm run server\" \"npm run watch\"",
+		"server": "nodemon src/app.js -e ejs,js,css,html,jpg,png,scss",
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"watch": "browser-sync start --proxy http://localhost:3000 --files 'public/**/*.html, public/**/*.css, public/**/*.js'"
+	},
+	"keywords": [],
+	"author": "Praba Ponnambalam",
+	"license": "ISC",
+	"dependencies": {
+		"@types/node": "^20.11.16",
+		"dotenv": "^16.4.1",
+		"express": "^4.18.2",
+		"nodemailer": "^6.9.9"
+	},
+	"devDependencies": {
+		"browser-sync": "^3.0.2",
+		"concurrently": "^8.2.2",
+		"nodemon": "^3.0.3"
+	}
+}
